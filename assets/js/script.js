@@ -5,11 +5,27 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initUtmPropagation();
+  initCheckoutTracking();
   initScrollButtons();
   initModulesCarousel();
   initTestimonialsCarousel();
   initFaqAccordion();
 });
+
+/**
+ * 0. Meta Pixel Event Tracking
+ * Dispatches InitiateCheckout event upon clicking checkout buttons
+ */
+function initCheckoutTracking() {
+  const checkoutLinks = document.querySelectorAll('a[href*="pay.cakto.com.br"]');
+  checkoutLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (typeof window.fbq === 'function') {
+        window.fbq('track', 'InitiateCheckout', { value: 47, currency: 'BRL' });
+      }
+    });
+  });
+}
 
 /**
  * 1. UTM & Query Parameters Preservation
