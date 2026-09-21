@@ -577,8 +577,116 @@
             <p class="mt-3 text-xs font-medium text-blue-200">Acesso imediato · Garantia de 7 dias</p>
           </div>
         </div>
-      </section>
+      <!-- FOOTER -->
+      <footer class="border-t border-white/10 bg-[#0A0A0A] py-12 px-4 text-slate-400 text-xs">
+        <div class="mx-auto max-w-4xl text-center space-y-6">
+          
+          <!-- Identificação Oficial -->
+          <div class="flex items-center justify-center">
+            <div class="flex w-full max-w-[240px] items-center justify-center gap-2 rounded-xl border-2 border-dashed border-[#60A5FA]/40 px-4 py-2 text-[#93C5FD]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play h-4 w-4">
+                <polygon points="6 3 20 12 6 21 6 3"></polygon>
+              </svg>
+              <span class="font-display text-xs font-extrabold uppercase tracking-wide">
+                Projeto YouTube Turbo
+              </span>
+            </div>
+          </div>
 
+          <!-- Links de Navegação e Políticas Legais -->
+          <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-slate-400 text-xs">
+            <a href="#venda" data-scroll-to="venda" class="hover:text-white transition-colors">Garantir Acesso</a>
+            <span class="text-slate-700">•</span>
+            <button type="button" onclick="openModal('privacyModal')" class="hover:text-white underline decoration-slate-700 underline-offset-4 transition-colors">
+              Políticas de Privacidade
+            </button>
+            <span class="text-slate-700">•</span>
+            <button type="button" onclick="openModal('termsModal')" class="hover:text-white underline decoration-slate-700 underline-offset-4 transition-colors">
+              Termos de Uso
+            </button>
+          </div>
+
+          <!-- Disclaimers Legais -->
+          <div class="border-t border-white/5 pt-6 text-[11px] text-slate-500 max-w-2xl mx-auto space-y-2 leading-relaxed">
+            <p>
+              © 2026 Projeto YouTube Turbo. Todos os direitos reservados.
+            </p>
+            <p>
+              Este site não possui vínculo institucional com o YouTube, Google LLC ou Meta Platforms. Todo o conteúdo tem caráter estritamente educacional, ensinando estratégias práticas de produção e monetização de vídeos. Os resultados podem variar de acordo com a aplicação e constância de cada aluno.
+            </p>
+          </div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- MODAL: POLÍTICAS DE PRIVACIDADE (LGPD) -->
+  <div id="privacyModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4" onclick="handleBackdropClick(event, 'privacyModal')">
+    <div class="bg-[#141414] border border-white/15 rounded-3xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden text-left" onclick="event.stopPropagation()">
+      <div class="p-5 sm:p-6 border-b border-white/10 flex items-center justify-between bg-[#111111]">
+        <div>
+          <h3 class="text-lg sm:text-xl font-black text-white font-display">Política de Privacidade</h3>
+          <p class="text-xs text-slate-400 mt-0.5">Em conformidade com a LGPD (Lei nº 13.709/2018)</p>
+        </div>
+        <button type="button" onclick="closeModal('privacyModal')" class="w-9 h-9 rounded-full bg-white/10 text-slate-300 hover:text-white hover:bg-white/20 flex items-center justify-center text-lg font-bold transition-colors">
+          ✕
+        </button>
+      </div>
+      <div class="p-5 sm:p-6 overflow-y-auto space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed">
+        <div>
+          <h4 class="font-bold text-white mb-1">1. Coleta e Uso de Informações</h4>
+          <p>Ao navegar em nossa página e adquirir o Projeto YouTube Turbo através de nossa plataforma segura de pagamentos parceira (Cakto), coletamos apenas as informações estritamente necessárias para processar a sua compra, liberar o acesso imediato à área de membros e emitir os comprovantes de compra.</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-1">2. Proteção e Segurança dos Dados</h4>
+          <p>Empregamos padrões rigorosos de segurança e criptografia para proteger seus dados pessoais. Seus dados cadastrais não são compartilhados, vendidos ou alugados para terceiros.</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-1">3. Seus Direitos</h4>
+          <p>Conforme a Lei Geral de Proteção de Dados (LGPD), você tem total direito de solicitar a confirmação, atualização ou exclusão de seus dados a qualquer momento entrando em contato com nosso suporte.</p>
+        </div>
+      </div>
+      <div class="p-4 border-t border-white/10 bg-[#111111] flex justify-end">
+        <button type="button" onclick="closeModal('privacyModal')" class="px-5 py-2.5 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-bold text-xs uppercase tracking-wider transition-colors">
+          Entendi e Concordo
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: TERMOS DE USO -->
+  <div id="termsModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4" onclick="handleBackdropClick(event, 'termsModal')">
+    <div class="bg-[#141414] border border-white/15 rounded-3xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden text-left" onclick="event.stopPropagation()">
+      <div class="p-5 sm:p-6 border-b border-white/10 flex items-center justify-between bg-[#111111]">
+        <div>
+          <h3 class="text-lg sm:text-xl font-black text-white font-display">Termos de Uso</h3>
+          <p class="text-xs text-slate-400 mt-0.5">Projeto YouTube Turbo</p>
+        </div>
+        <button type="button" onclick="closeModal('termsModal')" class="w-9 h-9 rounded-full bg-white/10 text-slate-300 hover:text-white hover:bg-white/20 flex items-center justify-center text-lg font-bold transition-colors">
+          ✕
+        </button>
+      </div>
+      <div class="p-5 sm:p-6 overflow-y-auto space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed">
+        <div>
+          <h4 class="font-bold text-white mb-1">1. Acesso ao Conteúdo</h4>
+          <p>O Projeto YouTube Turbo é um produto digital educacional. Ao adquirir seu acesso, você recebe credenciais exclusivas e intransferíveis para assistir às videoaulas na área de membros.</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-1">2. Garantia Incondicional de 7 Dias</h4>
+          <p>Conforme previsto no Art. 49 do Código de Defesa do Consumidor e em nossa política de garantia, você possui até 7 (sete) dias corridos a partir da data de confirmação do pagamento para solicitar o reembolso total caso decida não continuar.</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-1">3. Propriedade Intelectual</h4>
+          <p>Todos os materiais, videoaulas, textos e estruturas presentes no treinamento são protegidos por leis de direitos autorais, sendo expressamente proibida a reprodução ou distribuição não autorizada.</p>
+        </div>
+      </div>
+      <div class="p-4 border-t border-white/10 bg-[#111111] flex justify-end">
+        <button type="button" onclick="closeModal('termsModal')" class="px-5 py-2.5 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-bold text-xs uppercase tracking-wider transition-colors">
+          Fechar Termos
+        </button>
+      </div>
     </div>
   </div>
 
